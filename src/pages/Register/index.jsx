@@ -26,7 +26,7 @@ const Register = () => {
               name="email"
               ref={register({
                 required: true,
-                pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                // pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
               })}
               type="text"
               placeholder="email"
