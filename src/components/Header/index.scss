@@ -1,0 +1,22 @@
+.header {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 45px;
+  background-color: $primary-color;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  h2 {
+    margin: 0;
+  }
+  .header-actions {
+    button {
+      margin-left: 20px;
+      background-color: lighten($color: $primary-color, $amount: 5%);
+    }
+  }
+}
