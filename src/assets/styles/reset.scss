@@ -48,8 +48,24 @@ body {
 }
 
 .btn_default {
+  @extend %btn;
   background-color: transparent;
-  color: $light-theme-text;
+  //color: $light-theme-text;
+  color: #fff;
+}
+
+.btn_link {
+  .link {
+    color: $primary-color;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  &.active_link {
+    background-color: lighten($color: $primary-color, $amount: 5%);
+  }
 }
 
 .btn_block {
@@ -73,6 +89,14 @@ input {
   @include MediaQuery($xs) {
     width: 90%;
   }
+  &.error {
+    border-color: $error-color;
+  }
+}
+
+.form-error {
+  color: $error-color;
+  margin: 3px 0;
 }
 
 label {
@@ -90,6 +114,11 @@ label {
   margin: 0 auto;
   .account-form-container {
     text-align: center;
+    .switch-text {
+      color: $light-theme-text;
+      margin: 10px 0 15px 0;
+      font-size: 13px;
+    }
   }
 }
 
@@ -119,8 +148,23 @@ label {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 20px auto;
+  margin: 10px auto;
   input {
     width: 100%;
   }
+}
+
+%alert {
+  width: 100%;
+  background-color: red;
+  padding: 15px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.alert_err {
+  @extend %alert;
+  background-color: $error-color;
+  color: #fff;
 }

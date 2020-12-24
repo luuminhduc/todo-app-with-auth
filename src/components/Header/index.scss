@@ -12,11 +12,11 @@
   left: 0;
   h2 {
     margin: 0;
+    .link {
+      text-decoration: none;
+      color: #fff;
+    }
   }
   .header-actions {
-    button {
-      margin-left: 20px;
-      background-color: lighten($color: $primary-color, $amount: 5%);
-    }
   }
 }
