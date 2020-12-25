@@ -3,6 +3,7 @@ import * as actions from '../action/todoAction/actionTypes';
 const initialState = {
     todoList: [],
     error: null,
+    type: "all",
 }
 
 export default function todoReducer(state=initialState, action) {

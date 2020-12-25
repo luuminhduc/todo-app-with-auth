@@ -12,6 +12,19 @@
     }
   }
 
+  .todoList {
+    .todoList-container {
+      .todo-item {
+        background-color: #fff;
+        border-radius: 5px;
+        //border: 1px solid lighten($color: $gray-color, $amount: 35%);
+        &:nth-of-type(1) {
+          border: none;
+        }
+      }
+    }
+  }
+
   &.dark {
     background-color: $dark-theme-bg;
     color: $dark-them-text;
@@ -23,6 +36,13 @@
         color: $dark-them-text;
         &::placeholder {
           color: $dark-them-text;
+        }
+      }
+    }
+    .todoList {
+      .todoList-container {
+        .todo-item {
+          background-color: lighten($color: $dark-theme-bg, $amount: 5%);
         }
       }
     }
