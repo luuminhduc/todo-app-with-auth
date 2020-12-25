@@ -14,9 +14,8 @@ const TodoList = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    const getTodoList = dispatch(fetchAllTodos());
-    //dispatch(fetchAllTodos());
-  }, [param]);
+    dispatch(fetchAllTodos());
+  }, [param, dispatch]);
 
   const renderAllTodo = (arr) => {
     return arr?.map((item) => (
@@ -28,6 +27,8 @@ const TodoList = () => {
     switch (type) {
       case "all":
         return renderAllTodo(todoArr);
+      default:
+        return "";
     }
   };
 
