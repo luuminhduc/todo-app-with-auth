@@ -14,7 +14,8 @@ const TodoList = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAllTodos());
+    const getTodoList = dispatch(fetchAllTodos());
+    //dispatch(fetchAllTodos());
   }, [param]);
 
   const renderAllTodo = (arr) => {
