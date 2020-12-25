@@ -9,6 +9,10 @@ var firebaseConfig = {
     appId: "1:675008014363:web:b9d60d7175dcce55cd70be"
   };
   // Initialize Firebase
+  const timeStamp = firebase.firestore.FieldValue.serverTimestamp;
+
   firebase.initializeApp(firebaseConfig);
 
   export default firebase;
+
+  export {timeStamp};

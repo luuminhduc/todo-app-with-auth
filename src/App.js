@@ -10,6 +10,7 @@ import config from './firebase/config';
 import { ReactReduxFirebaseProvider, isLoaded } from 'react-redux-firebase';
 import Header from './components/Header';
 import Loading from './components/Loading';
+import AlertList from './components/AlertList';
 
 const rrfProps = {
   firebase,
@@ -30,6 +31,7 @@ const App = () => {
       <Router>
        <AuthIsLoaded>
        <Header/>
+       <AlertList/>
         <Loading/>
         <Switch>
           <Route exact path="/">

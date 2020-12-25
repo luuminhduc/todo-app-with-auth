@@ -82,7 +82,7 @@ body {
 
 input {
   padding: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid lighten($color: $gray-color, $amount: 30%);
   font-family: $font-stack;
   outline: none;
   border-radius: 5px;
@@ -143,6 +143,22 @@ label {
   @extend %container;
 }
 
+.container_md {
+  @include MediaQuery($xs) {
+    width: 90%;
+  }
+  @include MediaQuery($sm) {
+    width: 50%;
+  }
+  @include MediaQuery($md) {
+    width: 40%;
+  }
+  @include MediaQuery($lg) {
+    width: 50%;
+  }
+  @extend %container;
+}
+
 .form-control {
   display: flex;
   flex-direction: column;
@@ -166,5 +182,17 @@ label {
 .alert_err {
   @extend %alert;
   background-color: $error-color;
+  color: #fff;
+}
+
+.alert_warning {
+  @extend %alert;
+  background-color: $warning-color;
+  color: #fff;
+}
+
+.alert_success {
+  @extend %alert;
+  background-color: $success-color;
   color: #fff;
 }

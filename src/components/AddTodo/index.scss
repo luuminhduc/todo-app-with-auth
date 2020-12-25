@@ -1,0 +1,17 @@
+.addTodo {
+  form {
+    position: relative;
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 19px;
+      border-radius: 50px;
+    }
+    input {
+      width: 100%;
+      padding: 20px;
+      border-radius: 50px;
+    }
+  }
+}

@@ -1,10 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { switchTheme } from "../../redux/action/commonAction/actions";
 import { logOut } from "../../redux/action/loginAction/actions";
 
 const Header = () => {
   const firebaseReducer = useSelector((state) => state.firebaseReducer);
+  const commonReducer = useSelector((state) => state.commonReducer);
+  const { isLight } = commonReducer;
   const { auth } = firebaseReducer;
   const dispatch = useDispatch();
   console.log(auth);
@@ -16,6 +19,16 @@ const Header = () => {
         </NavLink>
       </h2>
       <div className="header-actions">
+        <button
+          onClick={() => dispatch(switchTheme())}
+          className="btn_sm btn_default"
+        >
+          {isLight ? (
+            <i className="far fa-moon"></i>
+          ) : (
+            <i className="far fa-sun"></i>
+          )}
+        </button>
         {auth.uid ? (
           <button
             onClick={() => dispatch(logOut())}

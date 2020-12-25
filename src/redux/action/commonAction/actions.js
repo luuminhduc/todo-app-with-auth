@@ -14,4 +14,32 @@ const hideLoading = () => {
     }
 }
 
-export{showLoading,hideLoading};
+const switchTheme = () => {
+    return {
+        type: actions.SWITCH_THEME,
+    }
+}
+
+const addAlert = (alert) => {
+    return{
+        type: actions.ADD_ALERT,
+        payload:alert
+    }
+}
+
+const removeAlert = (id) => {
+    return{
+        type: actions.REMOVE_ALERT,
+        payload:id,
+    }
+}
+
+const handleAlert = (alert) => dispatch => {
+    dispatch(addAlert(alert));
+    setTimeout(() => {
+        dispatch(removeAlert(alert.id))
+    }, 4000)
+}
+
+
+export{showLoading,hideLoading, switchTheme, handleAlert};
