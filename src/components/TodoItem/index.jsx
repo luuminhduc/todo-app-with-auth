@@ -29,7 +29,7 @@ const TodoItem = ({ item }) => {
     if ((startIndex, endIndex)) {
       dispatch(swapTodoItem(startIndex, endIndex));
     }
-  }, [dispatch, endIndex]);
+  }, [dispatch, endIndex, startIndex]);
 
   const handleUpdate = (item) => {
     dispatch(updateTodo({ ...item, completed: !item.completed }));
