@@ -175,7 +175,7 @@ label {
 %alert {
   width: 100%;
   background-color: red;
-  padding: 15px;
+  padding: 20px;
   margin: 10px 0;
   text-align: left;
   border-radius: 5px;
@@ -196,5 +196,11 @@ label {
 .alert_success {
   @extend %alert;
   background-color: $success-color;
+  color: #fff;
+}
+
+.alert_info {
+  @extend %alert;
+  background-color: $info-color;
   color: #fff;
 }

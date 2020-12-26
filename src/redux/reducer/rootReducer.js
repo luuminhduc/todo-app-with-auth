@@ -4,10 +4,12 @@ import registerReducer from './registerReducer';
 import loginReducer from './loginReducer';
 import commonReducer from "./commonReducer";
 import todoReducer from './todoReducer';
+import dragDropReducer from './dragDropReducer';
 export default combineReducers({
     firebaseReducer,
     registerReducer,
     loginReducer,
     commonReducer,
-    todoReducer
+    todoReducer,
+    dragDropReducer,
 })

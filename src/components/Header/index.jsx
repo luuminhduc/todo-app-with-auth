@@ -10,7 +10,6 @@ const Header = () => {
   const { isLight } = commonReducer;
   const { auth } = firebaseReducer;
   const dispatch = useDispatch();
-  console.log(auth);
   return (
     <div className="header shadow_md">
       <h2>

@@ -2,8 +2,9 @@ import { handleAlert, hideLoading, showLoading } from '../commonAction/actions';
 import * as actions from './actionTypes';
 
 const fetchAllTodos = () => (dispatch, getState, {getFirestore}) => {
+    console.log("FETH");
     const firestore = getFirestore();
-    firestore.collection("todos").orderBy("time", "desc").onSnapshot(snap => {
+    firestore.collection("todos").orderBy("index", "asc").onSnapshot(snap => {
         const docs = [];
         snap.forEach(el => docs.push({...el.data(),id: el.id}));
         dispatch({
@@ -14,6 +15,7 @@ const fetchAllTodos = () => (dispatch, getState, {getFirestore}) => {
 }
 
 const addTodo = (todo) => (dispatch, getState, {getFirestore}) => {
+    console.log("ADD");
     dispatch(showLoading());
     const firestore = getFirestore();
     firestore.collection("todos").add(todo).then(() => {
@@ -32,6 +34,7 @@ const addTodo = (todo) => (dispatch, getState, {getFirestore}) => {
 }
 
 const updateTodo = (todo) => (dispatch, getState, {getFirestore}) => {
+    console.log("UPDATE");
     dispatch(showLoading());
     const firestore = getFirestore();
     firestore.collection('todos').doc(todo.id).set({...todo}).then(() => {
@@ -50,6 +53,7 @@ const updateTodo = (todo) => (dispatch, getState, {getFirestore}) => {
 
 
 const deleteTodo = (id) => (dispatch, getState, {getFirestore}) => {
+    console.log("DELETE");
     dispatch(showLoading());
     const firestore = getFirestore();
     firestore.collection('todos').doc(id).delete().then(() => {

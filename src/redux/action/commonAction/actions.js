@@ -43,4 +43,4 @@ const handleAlert = (alert) => dispatch => {
 }
 
 
-export{showLoading,hideLoading, switchTheme, handleAlert};
+export{showLoading,hideLoading, switchTheme, handleAlert, removeAlert};

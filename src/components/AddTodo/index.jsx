@@ -20,6 +20,7 @@ const AddTodo = () => {
         title,
         completed: false,
         uid,
+        index: 2000,
         time: timeStamp(),
       };
 

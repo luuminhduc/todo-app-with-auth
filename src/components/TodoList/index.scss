@@ -3,6 +3,9 @@
   border-radius: 5px;
   .todoList-container {
     .todo-item {
+      &.active {
+        border: 2px solid $secondary-color;
+      }
       padding: 25px;
       cursor: pointer;
       margin: 2px 0;
