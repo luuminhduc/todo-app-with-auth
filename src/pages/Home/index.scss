@@ -23,9 +23,7 @@
         a {
           color: $light-theme-text;
         }
-        &:nth-of-type(1) {
-          border: none;
-        }
+
         .circle {
           border: 1px solid lighten($color: $light-theme-text, $amount: 30%);
         }
