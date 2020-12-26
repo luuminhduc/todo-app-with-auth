@@ -5,7 +5,7 @@ const initalState = {
     isLight:true,
     alertList:[
         {text:"When you are loged in, you can switch to dark theme or light theme", status:"info",id:Math.random()},
-        {text: "You can drag and drop the todo item to change its order (Bạn có thể kéo và thả những todo item để có thể thay đổi vị trí của chúng)", status:"info",index:Math.random()}
+        {text: "You can drag and drop the todo item to change its order, this feature is available on laptop. (Bạn có thể kéo và thả những todo item để có thể thay đổi vị trí của chúng, chức năng này chỉ xài được trên laptop)", status:"info",index:Math.random()}
     ],
 }
 

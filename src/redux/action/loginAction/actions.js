@@ -1,4 +1,4 @@
-import { hideLoading, showLoading } from '../commonAction/actions';
+import { handleAlert, hideLoading, showLoading } from '../commonAction/actions';
 import * as actions from './actionTypes';
 
 const loginRequest = (user,history) => (dispatch, getState, {getFirebase, getFirestore}) => {
@@ -9,7 +9,7 @@ const loginRequest = (user,history) => (dispatch, getState, {getFirebase, getFir
         user.password,
     ).then(() => {
         dispatch(hideLoading())
-
+        dispatch(handleAlert({text:"You are now loged in",status:"success",id:Math.random()}));
         dispatch({
             type: actions.LOGIN_SUCCESS,
         })

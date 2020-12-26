@@ -71,7 +71,14 @@ const TodoList = () => {
         <React.Fragment>
           <div className="todoList-container">{renderTodoList()}</div>
           <div className="todoList-info shadow_sm">
-            <span>{todoList.filter((el) => !el.completed).length} left</span>
+            <span>
+              {
+                todoList
+                  .filter((e) => e.uid === auth.uid)
+                  .filter((el) => !el.completed).length
+              }{" "}
+              left
+            </span>
             <div className="todoList-info-type">
               <span
                 onClick={() => dispatch(switchType("all"))}
