@@ -47,9 +47,9 @@ const TodoList = () => {
           <span>{item.title}</span>
         </div>
         <div className="todo-item-action">
-          <a onClick={() => handleEdit(item)} className="btn_sm">
+          <button onClick={() => handleEdit(item)} className="btn_sm">
             <i className="fas fa-pen"></i>
-          </a>
+          </button>
           <button onClick={() => handleDelete(item.id)} className="btn_sm">
             <i className="fas fa-trash"></i>
           </button>

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  handleAlert,
-  hideModal,
-} from "../../redux/action/commonAction/actions";
+import { handleAlert } from "../../redux/action/commonAction/actions";
 import {
   dropSelectedTodo,
   updateTodo,

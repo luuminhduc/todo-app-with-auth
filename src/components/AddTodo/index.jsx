@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { handleAlert } from "../../redux/action/commonAction/actions";
 import { addTodo } from "../../redux/action/todoAction/actions";
@@ -6,8 +6,6 @@ import { timeStamp } from "../../firebase/config";
 
 const AddTodo = () => {
   const firebaseReducer = useSelector((state) => state.firebaseReducer);
-  const todoReducer = useSelector((state) => state.todoReducer);
-  const { selectedTodo } = todoReducer;
   const { auth } = firebaseReducer;
   const { uid } = auth;
 
