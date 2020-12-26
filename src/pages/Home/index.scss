@@ -31,6 +31,11 @@
         }
       }
     }
+
+    .todoList-info {
+      background-color: lighten($color: $light-theme-bg, $amount: 2%);
+      border-radius: 0 0 5px 5px;
+    }
   }
 
   &.dark {
@@ -61,6 +66,9 @@
             border: 1px solid lighten($color: $dark-theme-bg, $amount: 15%);
           }
         }
+      }
+      .todoList-info {
+        background-color: lighten($color: $dark-theme-bg, $amount: 5%);
       }
     }
   }

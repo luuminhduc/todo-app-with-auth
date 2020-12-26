@@ -12,6 +12,7 @@ export default function todoReducer(state=initialState, action) {
     switch(type) {
         case actions.SELECT_TODO:case actions.DROP_SELECTED_TODO: return{...state, selectedTodo: payload};
         case actions.FETCH_ALL_TODOS: return{...state, todoList: payload};
+        case actions.SWITCH_TYPE:return{...state,type:payload};
         default: return state;
     }
 }

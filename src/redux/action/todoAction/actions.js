@@ -47,6 +47,8 @@ const updateTodo = (todo) => (dispatch, getState, {getFirestore}) => {
     })
 }
 
+
+
 const deleteTodo = (id) => (dispatch, getState, {getFirestore}) => {
     dispatch(showLoading());
     const firestore = getFirestore();
@@ -73,4 +75,11 @@ const dropSelectedTodo = () => {
     }
 }
 
-export {fetchAllTodos, addTodo, updateTodo, deleteTodo, selectTodo, dropSelectedTodo};
+const switchType = (type) => {
+    return{
+        type: actions.SWITCH_TYPE,
+        payload:type,
+    }
+}
+
+export {fetchAllTodos, addTodo, updateTodo, deleteTodo, selectTodo, dropSelectedTodo, switchType};

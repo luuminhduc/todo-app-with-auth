@@ -6,3 +6,4 @@ export const SELECT_TODO = "selectTodo";
 export const DROP_SELECTED_TODO = "drop";
 export const UPDATE_TODO_SUCCESS = "success";
 export const UPDATE_TODO_ERROR = "error"
+export const SWITCH_TYPE = "switchType";
