@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { handleAlert } from "../../redux/action/commonAction/actions";
 import { addTodo } from "../../redux/action/todoAction/actions";
@@ -6,6 +6,8 @@ import { timeStamp } from "../../firebase/config";
 
 const AddTodo = () => {
   const firebaseReducer = useSelector((state) => state.firebaseReducer);
+  const todoReducer = useSelector((state) => state.todoReducer);
+  const { selectedTodo } = todoReducer;
   const { auth } = firebaseReducer;
   const { uid } = auth;
 
@@ -22,9 +24,9 @@ const AddTodo = () => {
         uid,
         time: timeStamp(),
       };
+
       dispatch(addTodo(todo));
       setTitle("");
-      console.log(todo);
     } else {
       dispatch(
         handleAlert({
@@ -45,8 +47,10 @@ const AddTodo = () => {
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Add todo"
           className="shadow_sm"
+          id="editTodo"
         />
-        <button className="btn_md btn_primary">
+
+        <button className="btn_md btn_primary btn_main">
           Add <i className="fas fa-plus"></i>
         </button>
       </form>

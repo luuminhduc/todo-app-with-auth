@@ -8,6 +8,16 @@
       padding: 19px;
       border-radius: 50px;
     }
+    .cancel {
+      position: absolute;
+      top: 0;
+      right: -50px;
+      color: $gray-color;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 25px;
+      cursor: pointer;
+    }
     input {
       width: 100%;
       padding: 20px;

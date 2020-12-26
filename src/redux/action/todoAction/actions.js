@@ -27,15 +27,18 @@ const addTodo = (todo) => (dispatch, getState, {getFirestore}) => {
             type: actions.ADD_TODO_ERROR,
             payload: err.message,
         })
+        dispatch(hideLoading());
     })
 }
 
 const updateTodo = (todo) => (dispatch, getState, {getFirestore}) => {
+    dispatch(showLoading());
     const firestore = getFirestore();
-    firestore.collection('todos').docs(todo.id).set({...todo}).then(() => {
+    firestore.collection('todos').doc(todo.id).set({...todo}).then(() => {
         dispatch({
             type: actions.UPDATE_TODO_SUCCESS,
         })
+        dispatch(hideLoading())
     }).catch(err => {
         dispatch({
             type: actions.UPDATE_TODO_ERROR,
@@ -44,4 +47,30 @@ const updateTodo = (todo) => (dispatch, getState, {getFirestore}) => {
     })
 }
 
-export {fetchAllTodos, addTodo, updateTodo};
+const deleteTodo = (id) => (dispatch, getState, {getFirestore}) => {
+    dispatch(showLoading());
+    const firestore = getFirestore();
+    firestore.collection('todos').doc(id).delete().then(() => {
+        dispatch(handleAlert({text:"A todo is deleted", status:"success", id:Math.random()}));
+        dispatch(hideLoading());
+    }).catch(err => {
+        dispatch(handleAlert({text:err.message, status:"error", id:Math.random()}));
+        dispatch(hideLoading());
+    })
+}
+
+const selectTodo = (todo) => {
+    return{
+        type: actions.SELECT_TODO,
+        payload: todo,
+    }
+}
+
+const dropSelectedTodo = () => {
+    return{
+        type: actions.DROP_SELECTED_TODO,
+        payload: null,
+    }
+}
+
+export {fetchAllTodos, addTodo, updateTodo, deleteTodo, selectTodo, dropSelectedTodo};

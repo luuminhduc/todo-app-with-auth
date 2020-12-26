@@ -14,6 +14,7 @@ const hideLoading = () => {
     }
 }
 
+
 const switchTheme = () => {
     return {
         type: actions.SWITCH_THEME,

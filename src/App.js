@@ -11,6 +11,7 @@ import { ReactReduxFirebaseProvider, isLoaded } from 'react-redux-firebase';
 import Header from './components/Header';
 import Loading from './components/Loading';
 import AlertList from './components/AlertList';
+import SimpleModal from './components/SimpleModal';
 
 const rrfProps = {
   firebase,
@@ -32,6 +33,7 @@ const App = () => {
        <AuthIsLoaded>
        <Header/>
        <AlertList/>
+       <SimpleModal/>
         <Loading/>
         <Switch>
           <Route exact path="/">

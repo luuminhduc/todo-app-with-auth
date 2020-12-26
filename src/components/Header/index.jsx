@@ -19,23 +19,26 @@ const Header = () => {
         </NavLink>
       </h2>
       <div className="header-actions">
-        <button
-          onClick={() => dispatch(switchTheme())}
-          className="btn_sm btn_default"
-        >
-          {isLight ? (
-            <i className="far fa-moon"></i>
-          ) : (
-            <i className="far fa-sun"></i>
-          )}
-        </button>
         {auth.uid ? (
-          <button
-            onClick={() => dispatch(logOut())}
-            className="btn_sm btn_default"
-          >
-            Logout
-          </button>
+          <React.Fragment>
+            <button
+              onClick={() => dispatch(switchTheme())}
+              className="btn_sm btn_default"
+            >
+              {isLight ? (
+                <i className="far fa-moon"></i>
+              ) : (
+                <i className="far fa-sun"></i>
+              )}
+            </button>
+            <button
+              onClick={() => dispatch(logOut())}
+              className="btn_sm btn_default"
+            >
+              Logout
+            </button>
+            <span className="btn_sm btn_defaut">{auth.email}</span>
+          </React.Fragment>
         ) : (
           <React.Fragment>
             <NavLink
